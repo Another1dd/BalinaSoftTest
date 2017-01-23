@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">BalinaSoftTest</string>
+
+    <!--Drawer-->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="catalog">Каталог</string>
+    <string name="contacts">Контакты</string>
+
+    <!--HeaderNav-->
+    <string name="name">Another1DD</string>
+    <string name="email">snox.jenkins@gmail.com</string>
+
+    <string name="action_settings">Настройки</string>
+
+    <string name="google_maps_key">AIzaSyB_mZ46Pw7as6YQL91VJ8BmNzWOr98qDrk</string>
+    <string name="adress">Адрес: \u000A
+                                450071, г. Уфа, ул. Ростовская, 18</string>
+    <string name="rekv">Реквизиты: \u000A
+                                    ООО Ресторан “Фарфор Уфа” \u000A
+                                    ИНН/КПП: 0278910250/027801001 \u000A
+                                    ОГРН: 1150280063493 \u000A
+                                    Генеральный директор Панюшкин Данил Анатольевич \u000A
+                                    Юр. адрес: 450059, г. Уфа, ул. Комсомольская, 12 \u000A
+                                    Факт. адрес: 450071, г. Уфа, ул. Ростовская, 18 \u000A
+                                    Тел.: (347) 2-242-111</string>
+</resources>

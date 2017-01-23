@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categories">
+        <item>Патимейкер</item>
+        <item>Пицца</item>
+        <item>Сеты</item>
+        <item>Роллы</item>
+        <item>Суши</item>
+        <item>Добавки</item>
+        <item>Десерты</item>
+        <item>Напитки</item>
+        <item>Закуски</item>
+        <item>Лапша</item>
+        <item>Салаты</item>
+        <item>Супы</item>
+        <item>Теплое</item>
+    </string-array>
+
+    <array name="categories_picture">
+        <item>@drawable/partymaker</item>
+        <item>@drawable/pizza</item>
+        <item>@drawable/seti</item>
+        <item>@drawable/rolli</item>
+        <item>@drawable/sushi</item>
+        <item>@drawable/dobavki</item>
+        <item>@drawable/deserti</item>
+        <item>@drawable/napitki</item>
+        <item>@drawable/zakuski</item>
+        <item>@drawable/lapsha</item>
+        <item>@drawable/salati</item>
+        <item>@drawable/supi</item>
+        <item>@drawable/teploe</item>
+    </array>
+</resources>
