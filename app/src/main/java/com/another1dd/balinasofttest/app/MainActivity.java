@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -59,11 +58,10 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        mFragmentManager  = getSupportFragmentManager();
+        mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
         mFragmentTransaction.replace(R.id.containerView, new CatalogFragment()).commit();
         navigationView.setCheckedItem(0);
-
 
 
         Retrofit client = new Retrofit.Builder()
@@ -81,22 +79,19 @@ public class MainActivity extends AppCompatActivity
 
                     Yml result = response.body();
                     List<Offer> offers = result.getShop().getOffers();
-                    SugarRecord.deleteAll(Offer.class);
-                    SugarRecord.executeQuery("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '" + NamingHelper.toSQLName(Offer.class) + "'");
-                    SugarRecord.deleteAll(Param.class);
-                    SugarRecord.executeQuery("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '" + NamingHelper.toSQLName(Param.class) + "'");
 
+                    Offer.deleteAll(Offer.class);
+                    SugarRecord.executeQuery("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '" + NamingHelper.toSQLName(Offer.class) + "'");
+                    Param.deleteAll(Param.class);
+                    SugarRecord.executeQuery("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '" + NamingHelper.toSQLName(Param.class) + "'");
 
                     SugarRecord.saveInTx(offers);
                     ArrayList<Param> allParams = new ArrayList<>();
 
-
-                    for (Offer offer : offers)
-                    {
+                    for (Offer offer : offers) {
                         List<Param> params = offer.getParam();
-                        if (params != null)
-                        {   for (Param param : params)
-                            {
+                        if (params != null) {
+                            for (Param param : params) {
                                 param.setOfferId(offer.getId());
                             }
                             allParams.addAll(params);
@@ -116,15 +111,14 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onFailure(Call<Yml> call, Throwable t) {
 
-                if(t instanceof SocketTimeoutException){
+                if (t instanceof SocketTimeoutException) {
                     Log.d("Connection", "Socket Time out. Please try again.");
-                }else {
+                } else {
                     Log.d("Connection", t.getMessage());
                 }
             }
         });
     }
-
 
 
     @Override
